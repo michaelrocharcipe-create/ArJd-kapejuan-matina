@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KapeJuan Matina | Landing Page</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="bg-stone-900 text-stone-100 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-mug-hot text-amber-500 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-wider">KapeJuan <span class="text-amber-500 text-xs font-normal">Matina</span></span>
+                </div>
+                <div class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#hero" class="hover:text-amber-400 transition">Home</a>
+                    <a href="#about" class="hover:text-amber-400 transition">About Solution</a>
+                    <a href="#dashboard" class="hover:text-amber-400 transition">Pre-Order Dashboard</a>
+                    <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-stone-900 text-white">
+            <div class="absolute inset-0 opacity-40">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80" alt="Coffee Shop Interior" class="w-full h-full object-cover">
+            </div>
+            <div class="relative max-w-2xl px-8 py-20 sm:py-28 sm:px-12 space-y-6">
+                <span class="bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Community Solution</span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">Skip the Rush Line Near St. John Paul II</h1>
+                <p class="text-stone-300 text-lg">Order your favorite local brews and pastries ahead of time. Pick up instantly after Sunday mass or during hectic afternoon rush hours in Matina.</p>
+                <div>
+                    <a href="#dashboard" class="inline-block bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-6 py-3 rounded-xl shadow-lg transition">Explore Pre-Order Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT & PROBLEM SECTION -->
+    <section id="about" class="bg-white py-16 border-y border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="max-w-3xl space-y-3">
+                <span class="text-amber-600 font-semibold text-xs uppercase tracking-wider">The Community Gap</span>
+                <h2 class="text-3xl font-extrabold text-stone-900">Solving the Matina Rush Hour Bottleneck</h2>
+                <p class="text-stone-600 leading-relaxed">
+                    Patrons near St. John Paul II Parish and neighboring student spots often face 20-to-30-minute queue delays during peak afternoon hours. KapeJuan Matina provides a lightweight web interface where customers pre-order beverages, choose pickup times, and eliminate counter congestion.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 pt-4">
+                <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200 space-y-2">
+                    <div class="text-amber-600 text-xl font-bold"><i class="fa-solid fa-bolt"></i> Zero Line Waiting</div>
+                    <p class="text-stone-600 text-sm">Pre-order on your phone before walking over from mass or class.</p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200 space-y-2">
+                    <div class="text-amber-600 text-xl font-bold"><i class="fa-solid fa-location-dot"></i> Matina Community</div>
+                    <p class="text-stone-600 text-sm">Tailored specifically for local students, workers, and parishioners.</p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200 space-y-2">
+                    <div class="text-amber-600 text-xl font-bold"><i class="fa-solid fa-mug-saucer"></i> Local Coffee</div>
+                    <p class="text-stone-600 text-sm">Sourced fresh from regional Mindanao coffee growers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MAIN FEATURE: PRE-ORDER DASHBOARD -->
+    <section id="dashboard" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
+            <div>
+                <h2 class="text-2xl font-bold text-stone-900">Live Pre-Order Dashboard</h2>
+                <p class="text-stone-500 text-sm">Filter menu items, select your pickup time, and manage your active order queue.</p>
+            </div>
+            <!-- JS Feature 1: Menu Search -->
+            <div class="w-full md:w-72 relative">
+                <input type="text" id="menuSearch" onkeyup="filterMenu()" placeholder="Search drinks or snacks..." class="w-full pl-10 pr-4 py-2 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-stone-400"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Menu Cards -->
+            <div class="lg:col-span-2 grid sm:grid-cols-2 gap-6" id="menuGrid">
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 flex flex-col justify-between" data-name="tsokolate espresso">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=500&q=80" class="h-40 w-full object-cover" alt="Tsokolate">
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start"><h3 class="font-bold text-stone-900">Tsokolate Espresso</h3><span class="text-amber-600 font-bold">₱120</span></div>
+                            <p class="text-stone-500 text-xs mt-1">Rich Davao cacao with espresso.</p>
+                        </div>
+                        <button onclick="addToOrder('Tsokolate Espresso', 120)" class="mt-4 w-full bg-stone-900 hover:bg-amber-600 text-white font-medium py-2 rounded-xl transition text-sm">Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 flex flex-col justify-between" data-name="cold brew">
+                    <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=80" class="h-40 w-full object-cover" alt="Cold Brew">
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start"><h3 class="font-bold text-stone-900">Parish Cold Brew</h3><span class="text-amber-600 font-bold">₱110</span></div>
+                            <p class="text-stone-500 text-xs mt-1">18-hour slow-steeped Arabica.</p>
+                        </div>
+                        <button onclick="addToOrder('Parish Cold Brew', 110)" class="mt-4 w-full bg-stone-900 hover:bg-amber-600 text-white font-medium py-2 rounded-xl transition text-sm">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JS Feature 2: Queue Sidebar -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 space-y-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b pb-3">
+                        <h3 class="font-bold text-stone-900">Order Summary</h3>
+                        <span id="itemCountBadge" class="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-0.5 rounded-full">0 items</span>
+                    </div>
+                    <ul id="orderList" class="space-y-2 text-sm max-h-40 overflow-y-auto"><li class="text-stone-400 italic text-center py-4">Cart is empty</li></ul>
+                </div>
+                <div class="space-y-3 pt-3 border-t">
+                    <div class="flex justify-between font-bold"><span>Total:</span><span id="orderTotal">₱0</span></div>
+                    <select id="pickupTime" class="w-full p-2 border rounded-xl text-sm"><option>Immediately (10-15 mins)</option><option>After Mass (11:30 AM)</option></select>
+                    <button onclick="submitPreOrder()" class="w-full bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold py-2.5 rounded-xl text-sm transition">Confirm Order</button>
+                    <div id="queueStatus" class="hidden bg-emerald-50 border border-emerald-200 text-emerald-800 p-3 rounded-xl text-xs">
+                        <p class="font-bold"><i class="fa-solid fa-circle-check"></i> Order Placed!</p>
+                        <p id="queueTicket"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CONTACT & FEEDBACK FORM -->
+    <section id="contact" class="bg-white py-16 border-t border-stone-200">
+        <div class="max-w-xl mx-auto px-4 space-y-6">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold text-stone-900">Contact & Community Feedback</h2>
+                <p class="text-stone-500 text-sm">Send us your feedback regarding our IT105 web development project.</p>
+            </div>
+            <form id="feedbackForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <input type="text" id="contactName" required placeholder="Your Name" class="w-full p-3 border rounded-xl text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+                <input type="email" id="contactEmail" required placeholder="Your Email" class="w-full p-3 border rounded-xl text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+                <textarea id="contactMsg" rows="3" required placeholder="Your Feedback or Suggestion" class="w-full p-3 border rounded-xl text-sm focus:ring-2 focus:ring-amber-500 outline-none"></textarea>
+                <button type="submit" class="w-full bg-stone-900 hover:bg-amber-600 text-white font-bold py-3 rounded-xl text-sm transition">Submit Feedback</button>
+            </form>
+            <div id="formSuccessAlert" class="hidden bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-xl text-sm flex items-center space-x-2">
+                <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>
+                <span>Thank you! Your feedback has been recorded.</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 py-6 text-center text-xs">
+        <p>IT105 Web Development Project | St. John Paul II Parish Area, Matina, Davao City</p>
+    </footer>
+
+    <script>
+        function filterMenu() {
+            let input = document.getElementById('menuSearch').value.toLowerCase();
+            document.querySelectorAll('.menu-card').forEach(card => {
+                let name = card.getAttribute('data-name');
+                card.style.display = name.includes(input) ? "flex" : "none";
+            });
+        }
+
+        let cart = [];
+        function addToOrder(name, price) { cart.push({ name, price }); updateCartDisplay(); }
+        function updateCartDisplay() {
+            let list = document.getElementById('orderList');
+            let badge = document.getElementById('itemCountBadge');
+            let totalEl = document.getElementById('orderTotal');
+            badge.innerText = cart.length + ' items';
+            if (cart.length === 0) { list.innerHTML = `<li class="text-stone-400 italic text-center py-4">Cart is empty</li>`; totalEl.innerText = '₱0'; return; }
+            let html = '', total = 0;
+            cart.forEach(item => { total += item.price; html += `<li class="flex justify-between py-1"><span>${item.name}</span><span class="font-bold">₱${item.price}</span></li>`; });
+            list.innerHTML = html; totalEl.innerText = '₱' + total;
+        }
+
+        function submitPreOrder() {
+            if (cart.length === 0) return alert('Cart is empty!');
+            let timeSlot = document.getElementById('pickupTime').value;
+            let ticketNo = Math.floor(100 + Math.random() * 900);
+            document.getElementById('queueTicket').innerText = `Ticket #KJ-${ticketNo} | Pickup: ${timeSlot}`;
+            document.getElementById('queueStatus').classList.remove('hidden');
+            cart = []; updateCartDisplay();
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            document.getElementById('feedbackForm').reset();
+            document.getElementById('formSuccessAlert').classList.remove('hidden');
+            setTimeout(() => document.getElementById('formSuccessAlert').classList.add('hidden'), 5000);
+        }
+    </script>
+</body>
+</html>

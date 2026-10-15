@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KapeJuan Matina | Quick Pre-Order Dashboard</title>
+    <!-- Tailwind CSS CDN for modern responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-stone-900 text-stone-100 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-mug-hot text-amber-500 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-wider">KapeJuan <span class="text-amber-500 text-sm font-normal">Matina (Near St. John Paul II)</span></span>
+                </div>
+                <div class="hidden md:flex space-x-6 text-sm font-medium">
+                    <button onclick="switchTab('home')" class="nav-btn hover:text-amber-400 transition cursor-pointer text-amber-400">Home</button>
+                    <button onclick="switchTab('order')" class="nav-btn hover:text-amber-400 transition cursor-pointer">Pre-Order Dashboard</button>
+                    <button onclick="switchTab('about')" class="nav-btn hover:text-amber-400 transition cursor-pointer">About Us</button>
+                    <button onclick="switchTab('contact')" class="nav-btn hover:text-amber-400 transition cursor-pointer">Contact & Feedback</button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-stone-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-800 px-4 pt-2 pb-4 space-y-2">
+            <button onclick="switchTab('home'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded hover:bg-stone-700">Home</button>
+            <button onclick="switchTab('order'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded hover:bg-stone-700">Pre-Order Dashboard</button>
+            <button onclick="switchTab('about'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded hover:bg-stone-700">About Us</button>
+            <button onclick="switchTab('contact'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded hover:bg-stone-700">Contact & Feedback</button>
+        </div>
+    </nav>
+
+    <!-- Main Container / Multi-Page Views -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- ================= PAGE 1: HOME ================= -->
+        <section id="page-home" class="space-y-12">
+            <!-- Hero Banner -->
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-stone-900 text-white">
+                <div class="absolute inset-0 opacity-40">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80" alt="Coffee Shop Interior" class="w-full h-full object-cover">
+                </div>
+                <div class="relative max-w-2xl px-8 py-20 sm:py-28 sm:px-12 space-y-6">
+                    <span class="bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Community Solution</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">Skip the Rush Line Near St. John Paul II</h1>
+                    <p class="text-stone-300 text-lg">Order your favorite local brews and pastries ahead of time. Pick up instantly after Sunday mass or during hectic afternoon rush hours in Matina.</p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <button onclick="switchTab('order')" class="bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-6 py-3 rounded-xl shadow-lg transition">Open Pre-Order Dashboard</button>
+                        <button onclick="switchTab('about')" class="bg-stone-800 hover:bg-stone-700 text-stone-100 font-semibold px-6 py-3 rounded-xl border border-stone-600 transition">Learn Our Mission</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 space-y-3">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900">Zero Wait Time</h3>
+                    <p class="text-stone-600 text-sm">Place orders on your phone before walking over from church or school, and grab your drink straight from the express pickup counter.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 space-y-3">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900">Right Around the Corner</h3>
+                    <p class="text-stone-600 text-sm">Located minutes away from St. John Paul II Parish in Matina, Davao City—tailored specifically for local parishioners and students.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 space-y-3">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900">Local Davao Beans</h3>
+                    <p class="text-stone-600 text-sm">Sourced directly from local farmers around Mindanao, roasted fresh to support sustainable regional agriculture.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 2: PRE-ORDER DASHBOARD (MAIN FEATURE) ================= -->
+        <section id="page-order" class="hidden space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
+                <div>
+                    <h2 class="text-2xl font-bold text-stone-900">Live Pre-Order Dashboard</h2>
+                    <p class="text-stone-500 text-sm">Filter menu items, select your pickup time, and manage your active order queue in real time.</p>
+                </div>
+                <!-- JavaScript Feature 1: Real-time Menu Search Filter -->
+                <div class="w-full md:w-72 relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-stone-400">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" id="menuSearch" onkeyup="filterMenu()" placeholder="Search drinks or snacks..." class="w-full pl-10 pr-4 py-2 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Menu Items List -->
+                <div class="lg:col-span-2 grid sm:grid-cols-2 gap-6" id="menuGrid">
+                    <!-- Item 1 -->
+                    <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 flex flex-col justify-between" data-name="matina tsokolate espresso">
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=500&q=80" alt="Tsokolate Espresso" class="h-40 w-full object-cover">
+                        <div class="p-5 space-y-2 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <h3 class="font-bold text-lg text-stone-900">Matina Tsokolate Espresso</h3>
+                                    <span class="text-amber-600 font-bold">₱120</span>
+                                </div>
+                                <p class="text-stone-500 text-xs mt-1">Rich Davao cacao blended with double shot espresso and fresh milk.</p>
+                            </div>
+                            <button onclick="addToOrder('Matina Tsokolate Espresso', 120)" class="mt-4 w-full bg-stone-900 hover:bg-amber-600 text-white font-medium py-2 rounded-xl transition text-sm">Add to Pre-Order</button>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 flex flex-col justify-between" data-name="parish cold brew">
+                        <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=80" alt="Cold Brew" class="h-40 w-full object-cover">
+                        <div class="p-5 space-y-2 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <h3 class="font-bold text-lg text-stone-900">Parish Cold Brew</h3>
+                                    <span class="text-amber-600 font-bold">₱110</span>
+                                </div>
+                                <p class="text-stone-500 text-xs mt-1">18-hour slow-steeped Arabica cold brew for smooth morning energy.</p>
+                            </div>
+                            <button onclick="addToOrder('Parish Cold Brew', 110)" class="mt-4 w-full bg-stone-900 hover:bg-amber-600 text-white font-medium py-2 rounded-xl transition text-sm">Add to Pre-Order</button>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 flex flex-col justify-between" data-name="matcha latte">
+                        <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=500&q=80" alt="Matcha Latte" class="h-40 w-full object-cover">
+                        <div class="p-5 space-y-2 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <h3 class="font-bold text-lg text-stone-900">Matcha Latte</h3>
+                                    <span class="text-amber-600 font-bold">₱130</span>
+                                </div>
+                                <p class="text-stone-500 text-xs mt-1">Ceremonial grade Japanese green tea with creamy oat milk.</p>
+                            </div>
+                            <button onclick="addToOrder('Matcha Latte', 130)" class="mt-4 w-full bg-stone-900 hover:bg-amber-600 text-white font-medium py-2 rounded-xl transition text-sm">Add to Pre-Order</button>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 flex flex-col justify-between" data-name="ensaymada butter croissant">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80" alt="Croissant" class="h-40 w-full object-cover">
+                        <div class="p-5 space-y-2 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <h3 class="font-bold text-lg text-stone-900">Ensaymada Croissant</h3>
+                                    <span class="text-amber-600 font-bold">₱85</span>
+                                </div>
+                                <p class="text-stone-500 text-xs mt-1>Flaky butter croissant topped with grated queso de bola and butter sugar.</p>
+                            </div>
+                            <button onclick="addToOrder('Ensaymada Croissant', 85)" class="mt-4 w-full bg-stone-900 hover:bg-amber-600 text-white font-medium py-2 rounded-xl transition text-sm">Add to Pre-Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Order & Queue Sidebar (JavaScript Feature 2) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <h3 class="font-bold text-lg text-stone-900">Current Order Summary</h3>
+                            <span id="itemCountBadge" class="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-0.5 rounded-full">0 items</span>
+                        </div>
+                        <ul id="orderList" class="space-y-3 max-h-48 overflow-y-auto text-sm divide-y divide-stone-100">
+                            <li class="text-stone-400 italic text-center py-4">Your cart is empty. Choose items from the menu.</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-4 pt-4 border-t border-stone-200">
+                        <div class="flex justify-between font-bold text-base text-stone-900">
+                            <span>Total Amount:</span>
+                            <span id="orderTotal">₱0</span>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-stone-600">Select Pickup Time Slot:</label>
+                            <select id="pickupTime" class="w-full p-2.5 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                                <option>Immediately (10-15 mins)</option>
+                                <option>After Sunday Mass (11:30 AM)</option>
+                                <option>Afternoon Break (3:00 PM)</option>
+                                <option>Evening Rush (5:30 PM)</option>
+                            </select>
+                        </div>
+                        <button onclick="submitPreOrder()" class="w-full bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold py-3 rounded-xl shadow-md transition text-sm">Confirm Pre-Order</button>
+                        
+                        <!-- Live Queue Status Tracker Output -->
+                        <div id="queueStatus" class="hidden bg-emerald-50 border border-emerald-200 text-emerald-800 p-3 rounded-xl text-xs space-y-1">
+                            <p class="font-bold"><i class="fa-solid fa-circle-check"></i> Order Placed Successfully!</p>
+                            <p id="queueTicket">Queue Ticket #KJ-804 assigned. Est. wait: 12 mins.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3: ABOUT US ================= -->
+        <section id="page-about" class="hidden space-y-8 bg-white p-8 rounded-2xl shadow-sm border border-stone-200">
+            <div class="max-w-3xl space-y-4">
+                <span class="text-amber-600 font-semibold text-xs uppercase tracking-wider">Project Background</span>
+                <h2 class="text-3xl font-extrabold text-stone-900">Solving the Matina Rush Hour Bottleneck</h2>
+                <p class="text-stone-600 leading-relaxed">
+                    KapeJuan Matina is conceptualized to address the heavy foot traffic and congestion experienced right outside St. John Paul II Parish and neighboring academic zones during peak hours. Patrons often wait 20 to 30 minutes in line just to place coffee orders after religious services or afternoon classes.
+                </p>
+                <p class="text-stone-600 leading-relaxed">
+                    By implementing this lightweight pre-order dashboard, customers can secure their beverages and pastries ahead of time, eliminating physical queue crowding and supporting local Mindanao coffee growers efficiently.
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-6 pt-4">
+                <div class="bg-stone-50 p-6 rounded-xl border border-stone-200 space-y-2">
+                    <h4 class="font-bold text-stone-900">Project Creators</h4>
+                    <p class="text-stone-600 text-sm">IT105 Web Development Group Project (2 Members)</p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-xl border border-stone-200 space-y-2">
+                    <h4 class="font-bold text-stone-900">Location Focus</h4>
+                    <p class="text-stone-600 text-sm">Matina District, Davao City (Adjacent to St. John Paul II Parish)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 4: CONTACT & FEEDBACK ================= -->
+        <section id="page-contact" class="hidden max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-stone-200 space-y-6">
+            <div>
+                <h2 class="text-2xl font-bold text-stone-900">Contact & Feedback</h2>
+                <p class="text-stone-500 text-sm">Have suggestions for our community project or want to partner with KapeJuan? Send us a note.</p>
+            </div>
+
+            <!-- Form with validation and success message -->
+            <form id="feedbackForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-stone-700 mb-1">Your Full Name</label>
+                    <input type="text" id="contactName" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="Michael Roch Arcipe">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-stone-700 mb-1">Email Address</label>
+                    <input type="email" id="contactEmail" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="michael@example.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-stone-700 mb-1">Message or Suggestion</label>
+                    <textarea id="contactMsg" rows="4" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="How can we improve service near St. John Paul II Parish?"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-stone-900 hover:bg-amber-600 text-white font-bold py-3 rounded-xl transition text-sm shadow-md">Send Feedback</button>
+            </form>
+
+            <!-- Success Notification Alert -->
+            <div id="formSuccessAlert" class="hidden bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-xl text-sm flex items-start space-x-3">
+                <i class="fa-solid fa-circle-check text-emerald-600 text-lg mt-0.5"></i>
+                <div>
+                    <p class="font-bold">Thank you for your feedback!</p>
+                    <p class="text-xs mt-1">Your message has been successfully recorded for our IT105 project evaluation.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 mt-20 py-8 text-center text-xs space-y-2 border-t border-stone-800">
+        <p>IT105 Web Development Project | Real-World Community Solution near St. John Paul II Parish, Davao City</p>
+        <p>&copy; 2026 KapeJuan Matina. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Interactive Logic -->
+    <script>
+        // Tab Navigation Switcher
+        function switchTab(tabId) {
+            const pages = ['home', 'order', 'about', 'contact'];
+            pages.forEach(p => {
+                document.getElementById('page-' + p).classList.add('hidden');
+            });
+            document.getElementById('page-' + tabId).classList.remove('hidden');
+            
+            // Update nav button active styling
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-amber-400');
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // JavaScript Feature 1: Real-time Menu Item Filter
+        function filterMenu() {
+            let input = document.getElementById('menuSearch').value.toLowerCase();
+            let cards = document.querySelectorAll('.menu-card');
+            
+            cards.forEach(card => {
+                let name = card.getAttribute('data-name');
+                if (name.includes(input)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        // JavaScript Feature 2: Cart & Live Queue Order Tracker
+        let cart = [];
+
+        function addToOrder(name, price) {
+            cart.push({ name, price });
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            let list = document.getElementById('orderList');
+            let badge = document.getElementById('itemCountBadge');
+            let totalEl = document.getElementById('orderTotal');
+            
+            badge.innerText = cart.length + (cart.length === 1 ? ' item' : ' items');
+            
+            if (cart.length === 0) {
+                list.innerHTML = `<li class="text-stone-400 italic text-center py-4">Your cart is empty. Choose items from the menu.</li>`;
+                totalEl.innerText = '₱0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `<li class="flex justify-between items-center py-1">
+                    <span>${item.name}</span>
+                    <div class="flex items-center space-x-2">
+                        <span class="font-semibold">₱${item.price}</span>
+                        <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 text-xs"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </li>`;
+            });
+            list.innerHTML = html;
+            totalEl.innerText = '₱' + total;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function submitPreOrder() {
+            if (cart.length === 0) {
+                alert('Please add at least one item to your pre-order cart first.');
+                return;
+            }
+            let timeSlot = document.getElementById('pickupTime').value;
+            let ticketNo = Math.floor(100 + Math.random() * 900);
+            
+            let statusDiv = document.getElementById('queueStatus');
+            let ticketP = document.getElementById('queueTicket');
+            
+            ticketP.innerHTML = `Queue Ticket #KJ-${ticketNo} assigned. Pickup set for: <b>${timeSlot}</b>.`;
+            statusDiv.classList.remove('hidden');
+            
+            // Clear cart
+            cart = [];
+            updateCartDisplay();
+        }
+
+        // Form Validation and Success Message
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            let name = document.getElementById('contactName').value;
+            let email = document.getElementById('contactEmail').value;
+            let msg = document.getElementById('contactMsg').value;
+
+            if (name && email && msg) {
+                document.getElementById('feedbackForm').reset();
+                document.getElementById('formSuccessAlert').classList.remove('hidden');
+                setTimeout(() => {
+                    document.getElementById('formSuccessAlert').classList.add('hidden');
+                }, 6000);
+            }
+        }
+    </script>
+</body>
+</html>
